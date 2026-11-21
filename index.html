@@ -119,21 +119,21 @@ details ul{padding-inline-start:22px}
 <body>
 <header><div class="w">
 <a class="brand" href="#home"><img src="logo.png" alt="شعار الاتحاد"><span>الاتحاد العام للطلاب الموريتانيين<br>قسم بلعيون</span></a>
-<nav><a href="#home">الرئيسية</a><a href="#library">الأرشيف</a><a href="#results">النتائج</a><a href="#audio" hidden>الدروس الصوتية</a><a href="#news" hidden>الأخبار</a><a href="#new">ركن الطالب الجديد</a></nav>
+<nav><a href="#home">الرئيسية</a><a href="#library">الأرشيف</a><a href="#results">النتائج</a><a href="#audio">الدروس الصوتية</a><a href="#news" hidden>الأخبار</a><a href="#new">ركن الطالب الجديد</a></nav>
 </div></header>
 
 <main class="w">
 <div class="intro" id="home">
 <h1><span>نخدم الطلاب</span><br>نخدم الوطن</h1>
 <p>ملخصات المواد ودروس صوتية وأخبار الاتحاد، في مكان واحد لطلبة جامعة العلوم الإسلامية بلعيون.</p>
-<a class="btn" href="#library">تصفّح الأرشيف</a><a class="btn o" href="#audio" hidden>الدروس الصوتية</a>
+<a class="btn" href="#library">تصفّح الأرشيف</a><a class="btn o" href="#audio">الدروس الصوتية</a>
 </div>
 <img class="photo" src="hero.jpg" alt="طلبة الاتحاد العام للطلاب الموريتانيين يرفعون أعلام الاتحاد">
 
 <div class="feats">
 <a class="feat" href="#library"><span class="ic" data-i="book"></span><div><b>الأرشيف</b><small>ملخصات PDF</small></div><span class="n">01</span></a>
 <a class="feat" href="#results"><span class="ic" data-i="chart"></span><div><b>النتائج</b><small>اعرف نتيجتك برقم التسجيل</small></div><span class="n">02</span></a>
-<a class="feat" href="#audio" hidden><span class="ic" data-i="head"></span><div><b>الدروس الصوتية</b><small>استمع مباشرة أو حمّل الدرس</small></div><span class="n">02</span></a>
+<a class="feat" href="#audio"><span class="ic" data-i="head"></span><div><b>الدروس الصوتية</b><small>استمع مباشرة أو حمّل الدرس</small></div><span class="n">03</span></a>
 <a class="feat" href="#news" hidden><span class="ic" data-i="news"></span><div><b>أخبار الاتحاد</b><small>بيانات وأنشطة الاتحاد</small></div><span class="n">03</span></a>
 </div>
 
@@ -147,7 +147,7 @@ details ul{padding-inline-start:22px}
 
 <section><div class="cols">
 <div><h3>أحدث الملخصات</h3><div id="lastS"></div></div>
-<div hidden><h3>أحدث الدروس الصوتية</h3><div id="lastA"></div></div>
+<div><h3>أحدث الدروس الصوتية</h3><div id="lastA"></div></div>
 <div hidden><h3>إعلانات وأنشطة</h3><div id="lastN"></div></div>
 </div></section>
 
@@ -171,7 +171,7 @@ details ul{padding-inline-start:22px}
 <button class="btn" id="rb" type="button">إظهار النتيجة</button>
 <div id="rout" aria-live="polite" style="margin-top:14px"></div>
 </section>
-<section id="audio" hidden>
+<section id="audio">
 <h2><span class="ic s" data-i="head"></span>الدروس الصوتية</h2>
 <p class="sub">استمع مباشرة أو حمّل الدرس، حسب الكلية والتخصص.</p>
 <div class="tools"><select id="afac" aria-label="الكلية"></select><select id="aspc" aria-label="التخصص"></select></div>
@@ -264,14 +264,9 @@ m("علم الاجتماع",L,"الجذع المشترك","السداسي الأ
 m("مدخل لدراسة القانون",U,"الجذع المشترك","السداسي الأول (S1)",4,"ulaw","مناضلو الاتحاد العام"),
 m("السياسة الشرعية",U,"الجذع المشترك","السداسي الأول (S1)",3,"siy","مناضلو الاتحاد العام"),
 m("مباحث قرآنية",U,"الجذع المشترك","السداسي الأول (S1)",3,"quran","مناضلو الاتحاد العام")];
-const n=(t,by,f,st,sp,mi)=>({t,by,f,st,sp,m:mi});
+const n=(t,by,f,st,sp,mi,src)=>({t,by,f,st,sp,m:mi,src});
 const A=[
-n("علوم الحديث: المصطلح والرواة","الأستاذ (اسم الأستاذ)",U,"الليصانص","الكتاب والسنة",18),
-n("مدخل إلى علم العقيدة","الأستاذ (اسم الأستاذ)",U,"الليصانص","العقيدة والفكر الإسلامي",14),
-n("أصول الفقه: الحكم الشرعي","الأستاذ (اسم الأستاذ)",Sh,"الليصانص","الفقه وأصوله",20),
-n("فقه النوازل: المنهج والضوابط","الأستاذ (اسم الأستاذ)",Sh,"الماستر","فقه النوازل تأصيلًا وتنزيلًا",25),
-n("النحو: الإعراب والبناء","الأستاذ (اسم الأستاذ)",L,"الليصانص","اللغة العربية وآدابها",10),
-n("مدخل إلى الإعلام والاتصال","الأستاذ (اسم الأستاذ)",L,"الليصانص","الإعلام والاتصال",16)];
+n("مراجعة في مادة مدخل لدراسة أصول الفقه","الشيخ أحمد سيداحمد",Sh,"الجذع المشترك","السداسي الأول (S1)",16,"audio-fiqh-review.m4a")];
 const N=[
 {t:"بيان القسم حول الخدمات الجامعية",d:"أحدث بيان",b:"نص البيان يُضاف من لوحة الإدارة."},
 {t:"أنشطة الاتحاد هذا الفصل",d:"نشاط",b:"تغطية الفعاليات والأنشطة الطلابية."}];
@@ -287,7 +282,7 @@ $("none").hidden=r.length>0}
 ["fac","stg"].forEach(i=>$(i).addEventListener("input",()=>{fill($("spc"),$("fac").value,$("stg").value,"كل التخصصات");rs()}));
 ["q","spc"].forEach(i=>$(i).addEventListener("input",rs));rs();
 function ra(){const f=$("afac").value,sp=$("aspc").value;
-$("aud").innerHTML=A.filter(a=>(!f||a.f===f)&&(!sp||a.sp===sp)).map(a=>`<div class="aud"><div class="top"><div class="ic">${I.head}</div><div style="flex:1;min-width:140px"><b>${a.t}</b><br><small style="color:var(--mut)">${a.by} · ${a.m} دقيقة</small><br><small style="color:var(--mut)">${a.f} · ${a.st} · ${a.sp}</small></div><a class="d" style="font-weight:800;border-bottom:3px solid var(--gold);text-decoration:none;align-self:flex-start" href="#">${I.dl}تحميل</a></div><audio controls preload="none"></audio></div>`).join("")||'<p class="empty">لا توجد دروس لهذا الاختيار بعد.</p>'}
+$("aud").innerHTML=A.filter(a=>(!f||a.f===f)&&(!sp||a.sp===sp)).map(a=>`<div class="aud"><div class="top"><div class="ic">${I.head}</div><div style="flex:1;min-width:140px"><b>${a.t}</b><br><small style="color:var(--mut)">${a.by} · ${a.m} دقيقة</small><br><small style="color:var(--mut)">${a.f} · ${a.st} · ${a.sp}</small></div><a class="d" style="font-weight:800;border-bottom:3px solid var(--gold);text-decoration:none;align-self:flex-start" href="${a.src}" download="${a.t}.m4a">${I.dl}تحميل</a></div><audio controls preload="none" src="${a.src}"></audio></div>`).join("")||'<p class="empty">لا توجد دروس لهذا الاختيار بعد.</p>'}
 $("afac").addEventListener("input",()=>{fill($("aspc"),$("afac").value,"","كل التخصصات");ra()});
 $("aspc").addEventListener("input",ra);ra();
 $("nws").innerHTML=N.map(n=>`<article><div class="ic">${I.news}</div><div><time>${n.d}</time><h3 style="margin:2px 0">${n.t}</h3><p style="margin:0">${n.b}</p></div></article>`).join("");
