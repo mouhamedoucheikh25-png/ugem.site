@@ -132,7 +132,7 @@ details ul{padding-inline-start:22px}
 
 <div class="feats">
 <a class="feat" href="#library"><span class="ic" data-i="book"></span><div><b>الأرشيف</b><small>ملخصات PDF</small></div><span class="n">01</span></a>
-<a class="feat" href="#results"><span class="ic" data-i="chart"></span><div><b>النتائج</b><small>اعرف نتيجتك برقم التسجيل</small></div><span class="n">02</span></a>
+<a class="feat" href="#results"><span class="ic" data-i="chart"></span><div><b>النتائج</b><small>ستُضاف قريبًا</small></div><span class="n">02</span></a>
 <a class="feat" href="#audio"><span class="ic" data-i="head"></span><div><b>الدروس الصوتية</b><small>استمع مباشرة أو حمّل الدرس</small></div><span class="n">03</span></a>
 <a class="feat" href="#news" hidden><span class="ic" data-i="news"></span><div><b>أخبار الاتحاد</b><small>بيانات وأنشطة الاتحاد</small></div><span class="n">03</span></a>
 </div>
@@ -166,10 +166,13 @@ details ul{padding-inline-start:22px}
 
 <section id="results">
 <h2><span class="ic s" data-i="chart"></span>النتائج</h2>
-<p class="sub">اختر كليتك وتخصصك، وأدخل رقم التسجيل لتظهر نتيجتك.</p>
+<p class="sub">اعرف نتيجتك برقم التسجيل فور إعلان النتائج.</p>
+<div class="rbox" id="rsoon" style="text-align:center;padding:26px 18px"><span class="ic" style="margin:0 auto 6px" data-i="chart"></span><h3 style="margin:6px 0">ستُضاف قريبًا</h3><p class="empty" style="margin:0">سننشر النتائج هنا فور إعلانها.</p></div>
+<div id="rform" hidden>
 <div class="tools"><select id="rf" aria-label="الكلية"></select><select id="rp" aria-label="التخصص"></select><input id="rn" inputmode="numeric" autocomplete="off" placeholder="رقم التسجيل" aria-label="رقم التسجيل"></div>
 <button class="btn" id="rb" type="button">إظهار النتيجة</button>
 <div id="rout" aria-live="polite" style="margin-top:14px"></div>
+</div>
 </section>
 <section id="audio">
 <h2><span class="ic s" data-i="head"></span>الدروس الصوتية</h2>
