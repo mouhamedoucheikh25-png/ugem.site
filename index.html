@@ -114,12 +114,20 @@ details ul{padding-inline-start:22px}
 .rb{text-decoration:none;display:inline-block}
 .acts a.d{margin:0}
 .rbox{background:var(--card);border-radius:20px;padding:16px 18px;margin-bottom:12px}.t td:first-child{font-weight:800}button.btn{border:0;font:inherit;font-weight:800;cursor:pointer}
+.yr{display:inline-block;background:var(--gold);color:#14110a;border-radius:999px;padding:2px 20px;margin:6px 0 12px}
+.ev{background:var(--card);border-radius:24px;padding:18px;margin-bottom:16px;border-inline-start:6px solid var(--gold)}.ev h3{margin:8px 0 2px}.ev p{margin:0;color:var(--mut)}
+.dt{display:inline-block;background:var(--gold2);border-radius:999px;padding:0 14px;font-size:.85rem}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:12px}.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;cursor:pointer;display:block}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(10,8,2,.94);display:flex;align-items:center;justify-content:center;gap:8px;padding:12px}
+.lb img{max-width:calc(100% - 100px);max-height:86vh;object-fit:contain;border-radius:8px}
+.lbn{font:inherit;font-size:2rem;color:#fff;background:rgba(255,255,255,.18);border:0;width:44px;height:44px;border-radius:50%;cursor:pointer;flex:none;line-height:1}
+#lbx{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));inset-inline-end:14px}#lbc{position:absolute;bottom:calc(14px + env(safe-area-inset-bottom,0px));color:#fff}
 </style>
 </head>
 <body>
 <header><div class="w">
 <a class="brand" href="#home"><img src="logo.png" alt="شعار الاتحاد"><span>الاتحاد العام للطلاب الموريتانيين<br>قسم بلعيون</span></a>
-<nav><a href="#home">الرئيسية</a><a href="#library">الأرشيف</a><a href="#results">النتائج</a><a href="#audio">الدروس الصوتية</a><a href="#news" hidden>الأخبار</a><a href="#new">ركن الطالب الجديد</a></nav>
+<nav><a href="#home">الرئيسية</a><a href="#library">الأرشيف</a><a href="#results">النتائج</a><a href="#audio">الدروس الصوتية</a><a href="#news" hidden>الأخبار</a><a href="#memory">ذاكرة القسم</a><a href="#new">ركن الطالب الجديد</a></nav>
 </div></header>
 
 <main class="w">
@@ -134,6 +142,7 @@ details ul{padding-inline-start:22px}
 <a class="feat" href="#library"><span class="ic" data-i="book"></span><div><b>الأرشيف</b><small>ملخصات PDF</small></div><span class="n">01</span></a>
 <a class="feat" href="#results"><span class="ic" data-i="chart"></span><div><b>النتائج</b><small>ستُضاف قريبًا</small></div><span class="n">02</span></a>
 <a class="feat" href="#audio"><span class="ic" data-i="head"></span><div><b>الدروس الصوتية</b><small>استمع مباشرة أو حمّل الدرس</small></div><span class="n">03</span></a>
+<a class="feat" href="#memory"><span class="ic" data-i="camera"></span><div><b>ذاكرة القسم</b><small>صور ومحطات من أنشطة القسم</small></div><span class="n">04</span></a>
 <a class="feat" href="#news" hidden><span class="ic" data-i="news"></span><div><b>أخبار الاتحاد</b><small>بيانات وأنشطة الاتحاد</small></div><span class="n">03</span></a>
 </div>
 
@@ -181,6 +190,11 @@ details ul{padding-inline-start:22px}
 <div id="aud"></div>
 </section>
 
+<section id="memory">
+<h2><span class="ic s" data-i="camera"></span>ذاكرة القسم</h2>
+<p class="sub">أنشطة القسم ومحطاته بالصور، مرتبة بالتاريخ.</p>
+<div id="tl"></div>
+</section>
 <section id="news" hidden>
 <h2><span class="ic s" data-i="news"></span>أخبار الاتحاد</h2>
 <p class="sub">بيانات وأنشطة وعرائض ومطالب الطلاب.</p>
@@ -230,6 +244,7 @@ details ul{padding-inline-start:22px}
 
 <footer><div class="w"><span>الاتحاد العام للطلاب الموريتانيين – قسم جامعة العلوم الإسلامية بلعيون</span><span>نخدم الطلاب نخدم الوطن</span></div></footer>
 
+<div id="lb" class="lb" role="dialog" aria-modal="true" aria-label="معرض الصور" hidden><button id="lbx" class="rb" aria-label="إغلاق">✕</button><button id="lbp" class="lbn" aria-label="السابقة">›</button><img id="lbi" alt=""><button id="lbn" class="lbn" aria-label="التالية">‹</button><span id="lbc"></span></div>
 <div id="rd" class="rd" role="dialog" aria-modal="true" aria-label="قارئ الملخص" hidden>
 <div class="rbar"><button id="rx" class="rb" aria-label="إغلاق">✕</button><b id="rt"></b><a id="rdl" class="rb g" href="#" download>تحميل PDF</a></div>
 <p id="rm" class="rmsg"></p>
@@ -248,6 +263,7 @@ grad:sv('<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-
 help:sv('<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/>'),
 check:sv('<path d="M4 12l5 5L20 6"/>'),
 chart:sv('<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'),
+camera:sv('<path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="4"/>'),
 play:sv('<path d="M8 5v14l11-7z"/>')};
 const F={
 "كلية أصول الدين":{"الجذع المشترك":["السداسي الأول (S1)","السداسي الثاني (S2)"],"الليصانص":["الكتاب والسنة","العقيدة والفكر الإسلامي","القانون العام والسياسة الشرعية"],"الماستر":["الدرس الحديثي رواية ودراية","الفكر الإسلامي وقضايا العصر"]},
@@ -325,6 +341,18 @@ const res=await findRes(n,f,st,sp||"",db).catch(()=>[]);
 if(!res.length){o.innerHTML='<p class="empty">لم نعثر على نتيجة بهذه البيانات. تأكد من رقم التسجيل والكلية والتخصص.</p>';return}
 o.innerHTML="";res.forEach(x=>{const d=document.createElement("div");d.className="rbox";const h=document.createElement("h3");h.textContent=x.t;const w=document.createElement("div");w.className="tw";const t=document.createElement("table");t.className="t";x.rows.forEach(([a,b])=>{const tr=t.insertRow();tr.insertCell().textContent=a;tr.insertCell().textContent=b});w.appendChild(t);d.append(h,w);o.appendChild(d)})}
 $("rb").onclick=rgo;$("rn").addEventListener("keydown",e=>{if(e.key==="Enter")rgo()});
+const MO=["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+const M=[{y:2024,m:4,d:29,k:"mem-2024-04-29",p:5,t:"وقفة تضامنية مع أهل غزة",x:"القسم ينظم وقفة تضامنية مع أهل غزة"}];
+function mem(){const ys=[...new Set(M.map(e=>e.y))].sort((a,b)=>b-a);
+$("tl").innerHTML=ys.map(y=>`<h3 class="yr">${y}</h3>`+M.filter(e=>e.y===y).sort((a,b)=>b.m-a.m||b.d-a.d).map(e=>`<div class="ev"><span class="dt">${e.d} ${MO[e.m-1]} ${e.y}</span><h3>${e.t}</h3><p>${e.x}</p><div class="gal">${Array.from({length:e.p},(_,i)=>`<img loading="lazy" src="${e.k}-${i+1}.jpg" alt="${e.t} – صورة ${i+1}" data-k="${e.k}" data-n="${i}">`).join("")}</div></div>`).join("")).join("")}
+let lbE=null,lbI=0;
+function lbShow(){$("lbi").src=`${lbE.k}-${lbI+1}.jpg`;$("lbi").alt=`${lbE.t} – صورة ${lbI+1}`;$("lbc").textContent=`${lbI+1} / ${lbE.p}`}
+$("tl").addEventListener("click",ev=>{const im=ev.target.closest("img[data-k]");if(!im)return;lbE=M.find(x=>x.k===im.dataset.k);lbI=+im.dataset.n;lbShow();$("lb").hidden=false;document.body.style.overflow="hidden"});
+const lbc=()=>{$("lb").hidden=true;document.body.style.overflow=""};
+$("lbx").onclick=lbc;$("lbn").onclick=()=>{lbI=(lbI+1)%lbE.p;lbShow()};$("lbp").onclick=()=>{lbI=(lbI-1+lbE.p)%lbE.p;lbShow()};
+document.addEventListener("keydown",e=>{if($("lb").hidden)return;if(e.key==="Escape")lbc();if(e.key==="ArrowLeft")$("lbn").click();if(e.key==="ArrowRight")$("lbp").click()});
+let tx=0;$("lb").addEventListener("touchstart",e=>{tx=e.changedTouches[0].clientX},{passive:true});$("lb").addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)$(dx<0?"lbn":"lbp").click()});
+mem();
 document.querySelectorAll("[data-i]").forEach(e=>e.innerHTML=I[e.dataset.i]);
 </script>
 </body>
